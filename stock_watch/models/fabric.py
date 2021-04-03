@@ -1,6 +1,7 @@
 class Fabric:
 
-    def __init__ (self, design_ref, main_colour, style, stock_price, sale_price, quantity, id = None):
+    def __init__ (self, manufacturer, design_ref, main_colour, style, stock_price, sale_price, quantity, id = None):
+        self.manufacturer = manufacturer
         self.design_ref = design_ref
         self.main_colour = main_colour
         self.style = style

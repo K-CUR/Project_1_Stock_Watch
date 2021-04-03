@@ -5,9 +5,11 @@ from models.fabric import Fabric
 class TestFabric (unittest.TestCase):
 
     def setUp(self):
-        self.fabric = Fabric("Nena01", "Green", "Plain", 12.00, 18.00, 26)
+        self.fabric = Fabric("Harlequin", "Nena01", "Green", "Plain", 12.00, 18.00, 26)
 
-    
+   
+    def test_fabric_has_manufacturer(self):
+        self.assertEqual("Harlequin", self.fabric.manufacturer)
     
     def test_fabric_has_design_ref(self):
         self.assertEqual("Nena01", self.fabric.design_ref)

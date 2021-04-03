@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<table>
+<tr>
+    <th>Stock id</th>
+    <th>Design ref</th>
+    <th>Main colour</th>
+    <th>Style</th>
+    <th>Stock price £/m</th>
+    <th>Markup %</th>
+    <th>Quantity m</th>
+    <th>Low stock warning</th>
+    <th>Manufacturer</th>
+</tr>
+
+{% for fabric in fabrics %}
+<tr>
+    <td>{{ fabric.id }}</td>
+    <td>{{ fabric.design_ref }}</td>
+    <td> {{ fabric.main_colour }}</td>
+    <td>{{ fabric.style }}</td>
+    <td>{{ fabric.stock_price }}</td>
+    <td>markup</td>
+    <td>{{ fabric.quantity }}</td>
+    <td>Low stock warning</td>
+    <td> <a href="/manufacturer/{{ fabric.manufacturer }}">{{ fabric.manufacturer }}</a></td>
+</tr>
+{% endfor %}
+
+</table>
+
+{% endblock %}

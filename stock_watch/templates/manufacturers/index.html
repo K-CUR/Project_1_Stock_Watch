@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% for manufacturer in manufacturers %}
+
+<div>
+<h1>Manufacturer: {{ manufacturer.name}}</h1>
+<h2>Sales contact: {{ manufacturer.sales_contact }}</h2>
+<h3>Status: {{ manufacturer.get_status() }}</h3>
+</div>
+
+{% endfor %}
+
+{% endblock %}

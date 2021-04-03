@@ -5,3 +5,10 @@ class Manufacturer:
         self.sales_contact = sales_contact
         self.active = active
         self.id = id
+
+    
+    def get_status(self):
+        if self.active == True:
+            return "Active"
+        else:
+            return "Deactivated"

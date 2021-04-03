@@ -11,7 +11,6 @@ class Fabric:
         self.id = id
 
 
-
     #METHODS
 
     def mark_up(self, stock_price, sale_price):

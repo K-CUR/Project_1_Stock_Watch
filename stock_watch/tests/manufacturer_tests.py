@@ -15,7 +15,14 @@ class TestManufacturer (unittest.TestCase):
     def test_manufacturer_has_sale_contact(self):
         self.assertEqual("John Barrows", self.manufacturer.sales_contact)
 
-    def test_manufacturer_is_active(self):
-        self.assertEqual(True, self.manufacturer.active)
+    # def test_manufacturer_is_active(self):
+    #     actual = self.manufacturer.status()
+    #     self.assertEqual("Active", actual)
+
+
+    def test_status(self):
+        self.assertEqual("Active", self.manufacturer.get_status())
+
+    
 
 

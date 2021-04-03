@@ -10,5 +10,8 @@ import repositories.manufacturer_repository as manufacturer_repository
 
 fabrics_blueprint = Blueprint("fabrics", __name__)
 
-# @fabrics_blueprint.route("/")
-# def 
+@fabrics_blueprint.route("/fabrics")
+def fabrics():
+    fabrics = fabric_repository.select_all()
+    return render_template("/fabrics/index.html", fabrics = fabrics)
+

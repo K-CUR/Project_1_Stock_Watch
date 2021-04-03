@@ -24,7 +24,7 @@ def select_all():
     results = run_sql(sql)
 
     for row in results:
-        Manufacturer = Manufacturer(row['name'], row['sales_contact'], row['active'], row['id'])
+        manufacturer = Manufacturer(row['name'], row['sales_contact'], row['active'], row['id'])
         manufacturers.append(manufacturer)
     return manufacturers
 
@@ -51,3 +51,16 @@ def update(fabric):
     sql = "UPDATE manufacturers SET (name, sales_contact, active) = ( %s, %s, %s ) WHERE id = %s"
     values = [manufacturer.name, manufacturer.sales_contact, manufacturer.active]
     run_sql(sql, values)
+
+
+def fabrics(manufacturer):
+    fabrics = []
+
+    sql = "SELECT * FROM fabrics WHERE manufacturer_id = %s"
+    values = [manufacturer.id]
+    results = run_sql(sql, values)
+
+    for row in results:
+        fabric = Fabric(row['manufacturer_id'], row['design_ref'], row['main_colour'], row ['style'], row['stock_price'], row['sale_price'], row['quantity'], row['id'])
+        fabrics.append(fabric)
+    return fabrics

@@ -1,9 +1,16 @@
-from flask import Flask
+from flask import Flask, render_template, url_for
+
+# from controllers.manufacturer_controller import manufacturer_controller
+# from controllers.fabric_controller import fabric_controller
 
 app = Flask(__name__)
 
-from controllers.fabric_controller import fabric_controller
-from controllers.manufacturer_controller import manufacturer_controller
+# app.register_blueprint(fabrics_blueprint)
+# app.register_blueprint(manufacturers_blueprint)
+
+@app.route('/')
+def home():
+    return render_template('index.html')
 
 if __name__ == "__main__":
     app.run(debug=True)

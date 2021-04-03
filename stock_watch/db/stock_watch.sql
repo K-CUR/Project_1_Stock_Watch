@@ -16,6 +16,5 @@ CREATE TABLE fabrics (
     style VARCHAR(255),
     stock_price DECIMAL(5,2),
     sale_price DECIMAL(5,2),
-    mark_up DECIMAL(4,2),
     quantity INT
 );

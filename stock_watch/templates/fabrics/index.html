@@ -4,7 +4,7 @@
 
 <table>
 <tr>
-    <th>Stock id</th>
+    <th>Stock id (click to edit)</th>
     <th>Design ref</th>
     <th>Main colour</th>
     <th>Style</th>
@@ -12,12 +12,12 @@
     <th>Markup %</th>
     <th>Quantity m</th>
     <th>Low stock warning</th>
-    <th>Manufacturer</th>
+    <th>Manufacturer (click to view)</th>
 </tr>
 
 {% for fabric in fabrics %}
 <tr>
-    <td>{{ fabric.id }}</td>
+    <td><a href="/fabrics/{{ fabric.id }}/edit">{{ fabric.id }}</a></td>
     <td>{{ fabric.design_ref }}</td>
     <td> {{ fabric.main_colour }}</td>
     <td>{{ fabric.style }}</td>
@@ -38,6 +38,11 @@
 </table>
 
 <!-- # ADD NEW FABRIC BUTTON -->
+<button>
+    <a href="/fabrics/new">Add Fabric</a>
+</button>
+
+
 <!-- # EDIT FABRIC BUTTON -->
 
 {% endblock %}

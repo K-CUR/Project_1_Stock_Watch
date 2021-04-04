@@ -68,3 +68,17 @@ def fabrics(manufacturer):
         fabric = Fabric(manufacturer, row['design_ref'], row['main_colour'], row ['style'], row['stock_price'], row['sale_price'], row['quantity'], row['id'])
         fabrics.append(fabric)
     return fabrics
+
+
+
+# def select(active):
+#     all_active_manufacturers = []
+
+#     sql = "SELECT * FROM manufacturers WHERE active = %s"
+#     values = [active]
+#     result = run_sql(sql, values)
+
+#     if result is not None:
+#         manufacturer = Manufacturer(row['manufacturer_name'], row['sales_contact'], row['active'], row['id'])
+
+#     return all_active_manufacturers

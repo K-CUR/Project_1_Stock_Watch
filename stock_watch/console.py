@@ -39,7 +39,7 @@ fabric_repository.save(fabric_5)
 fabric_6 = Fabric(manufacturer_2, "Bella25", "Pink", "Floral", 18.00, 27.00, 50)
 fabric_repository.save(fabric_6)
 
-fabric_7 = Fabric(manufacturer_3, "Easter Bunny", "White", "Pattern", 8.00, 13.00, 12)
+fabric_7 = Fabric(manufacturer_3, "Easter Bunny", "White", "Illustration", 8.00, 13.00, 12)
 fabric_repository.save(fabric_7)
 
 

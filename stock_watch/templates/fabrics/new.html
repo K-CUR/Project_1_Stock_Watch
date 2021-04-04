@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<form action="/fabrics" method="post">
+
+    <div>
+        <label for="manufacturer">Manufacturer:</label>
+        <select id="manufacturer" name="manufacturer_id" required autofocus> 
+<!-- DROP DOWN -->  
+        <option value=""></option>
+        {% for manufacturer in all_manufacturers %}
+        <option value="{{ manufacturer.id }}">{{ manufacturer.name }}</option>
+        {% endfor %}
+        </select>   
+    </div>
+    <div>
+        <label for="design_ref">Design ref:</label>
+        <input type="text" id="design_ref" name="design_ref" required >
+    </div>
+    <div>
+        <label for="main_colour">Main colour:</label>
+        <select id="main_colour" name="main_colour" required > 
+<!-- DROP DOWN -->
+            <option value= "" ></option>
+            {% for colour in all_colours %}
+            <option value="{{ colour }}">{{ colour }}</option>
+            {% endfor %}
+        </select> 
+    </div>
+    <div>
+        <label for="style">Style:</label>
+        <select id="style" name="style" required > 
+<!-- DROP DOWN -->
+            <option value=""></option>
+            {% for style in all_styles %}
+            <option value="{{ style }}">{{ style }}</option>
+            {% endfor %}
+        </select> 
+    </div>
+    <div>
+        <label for="stock_price">Stock price £:</label>
+        <input type="string" id="stock_price" name="stock_price" required >
+    </div>
+    <div>
+        <label for="sale_price">Sale price £:</label>
+        <input type="string" id="sale_price" name="sale_price" required >
+    </div>
+    <div>
+        <label for="quantity">Quantity m:</label>
+        <input type="number" id="quantity" name="quantity" required >        
+    </div>
+
+    <button type="submit">Add to stock</button>
+
+</form>
+
+
+{% endblock %}

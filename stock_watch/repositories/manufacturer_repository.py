@@ -1,10 +1,13 @@
 from db.run_sql import run_sql
 
-
 from models.manufacturer import Manufacturer
+from models.fabric import Fabric
+
+import repositories.fabric_repository as fabric_repository
+
 
 def save(manufacturer):
-    sql = "INSERT INTO manufacturers (name, sales_contact, active) VALUES ( %s, %s, %s ) RETURNING id"
+    sql = "INSERT INTO manufacturers (manufacturer_name, sales_contact, active) VALUES ( %s, %s, %s ) RETURNING id"
     values = [manufacturer.name, manufacturer.sales_contact, manufacturer.active]
     results = run_sql(sql, values)
     id = results [0] ['id']
@@ -37,7 +40,8 @@ def select(id):
     result = run_sql(sql, values) [0]
 
     if result is not None:
-        manufacturer = Manufacturer(row['name'], row['sales_contact'], row['active'], row['id'])
+        manufacturer = Manufacturer(result['name'], result['sales_contact'], result['active'], result['id'])
+        # had error 'row not defined' because I had row[] instead of result[]
     return manufacturer
 
 
@@ -48,7 +52,7 @@ def delete(id):
 
 
 def update(fabric):
-    sql = "UPDATE manufacturers SET (name, sales_contact, active) = ( %s, %s, %s ) WHERE id = %s"
+    sql = "UPDATE manufacturers SET (manufacturer_name, sales_contact, active) = ( %s, %s, %s ) WHERE id = %s"
     values = [manufacturer.name, manufacturer.sales_contact, manufacturer.active]
     run_sql(sql, values)
 
@@ -61,6 +65,6 @@ def fabrics(manufacturer):
     results = run_sql(sql, values)
 
     for row in results:
-        fabric = Fabric(row['manufacturer_id'], row['design_ref'], row['main_colour'], row ['style'], row['stock_price'], row['sale_price'], row['quantity'], row['id'])
+        fabric = Fabric(manufacturer, row['design_ref'], row['main_colour'], row ['style'], row['stock_price'], row['sale_price'], row['quantity'], row['id'])
         fabrics.append(fabric)
     return fabrics

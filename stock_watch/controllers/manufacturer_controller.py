@@ -13,3 +13,9 @@ manufacturers_blueprint = Blueprint("manufacturers", __name__)
 def manufacturers():
     manufacturers = manufacturer_repository.select_all()
     return render_template("/manufacturers/index.html", manufacturers = manufacturers)
+
+
+@manufacturers_blueprint.route("/manufacturer/<id>")
+def show_manufacturer(id):
+    manufacturer = manufacturer_repository.select(id)
+    return render_template("/manufacturer/show.html", manufacturer = manufacturer)

@@ -12,3 +12,7 @@ class Manufacturer:
             return "Active"
         else:
             return "Deactivated"
+
+    # MAY NEED
+    # def mark_active(self):
+    #     self.active = True

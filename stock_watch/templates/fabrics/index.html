@@ -25,7 +25,12 @@
     <td>markup</td>
     <td>{{ fabric.quantity }}</td>
     <td>Low stock warning</td>
-    <td> <a href="/manufacturer/{{ fabric.manufacturer }}">{{ fabric.manufacturer }}</a></td>
+
+    <td> 
+    
+        <a href="/fabric/manufacturer/{{ fabric.manufacturer }}">{{ fabric.manufacturer.name }}</a>
+
+    </td>
 </tr>
 {% endfor %}
 

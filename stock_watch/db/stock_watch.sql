@@ -3,7 +3,7 @@ DROP TABLE manufacturers;
 
 CREATE TABLE manufacturers (
     id SERIAL PRIMARY KEY,
-    name VARCHAR(255),
+    manufacturer_name VARCHAR(255),
     sales_contact VARCHAR(255),
     active BOOlEAN
 );

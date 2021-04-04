@@ -27,7 +27,7 @@ def select_all():
     results = run_sql(sql)
 
     for row in results:
-        manufacturer = Manufacturer(row['name'], row['sales_contact'], row['active'], row['id'])
+        manufacturer = Manufacturer(row['manufacturer_name'], row['sales_contact'], row['active'], row['id'])
         manufacturers.append(manufacturer)
     return manufacturers
 
@@ -40,7 +40,7 @@ def select(id):
     result = run_sql(sql, values) [0]
 
     if result is not None:
-        manufacturer = Manufacturer(result['name'], result['sales_contact'], result['active'], result['id'])
+        manufacturer = Manufacturer(result['manufacturer_name'], result['sales_contact'], result['active'], result['id'])
         # had error 'row not defined' because I had row[] instead of result[]
     return manufacturer
 

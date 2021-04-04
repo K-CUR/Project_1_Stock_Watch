@@ -28,12 +28,16 @@
 
     <td> 
     
-        <a href="/fabric/manufacturer/{{ fabric.manufacturer }}">{{ fabric.manufacturer.name }}</a>
+        <a href="/manufacturer/{{ fabric.manufacturer.id }}">{{ fabric.manufacturer.name }}</a>
+        <!-- href determines url. Whatever is in double curlies is the name of the link on the web page -->
 
     </td>
 </tr>
 {% endfor %}
 
 </table>
+
+<!-- # ADD NEW FABRIC BUTTON -->
+<!-- # EDIT FABRIC BUTTON -->
 
 {% endblock %}

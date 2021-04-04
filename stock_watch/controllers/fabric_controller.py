@@ -18,8 +18,4 @@ def fabrics():
     return render_template("/fabrics/index.html", fabrics = fabrics)
 
 
-@manufacturers_blueprint.route("/manufacturer/<id>")
-def show_manufacturer(id):
-    manufacturer = manufacturer_repository.select(id)
-    return render_template("/manufacturer/show.html", manufacturer = manufacturer)
 

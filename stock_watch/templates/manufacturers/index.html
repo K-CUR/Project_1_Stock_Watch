@@ -1,15 +1,53 @@
 {% extends 'base.html' %}
 
 {% block content %}
+Add Manufacturer
+<form action="/manufacturers/new" method='post'>
+
+    <div>
+        <label for="name">Company name:</label>
+        <input type="text" id="name" name="name" required autofocus >
+    </div>
+
+    <div>
+        <label for="sales_contact">Sales contact:</label>
+        <input type="text" id="sales_contact" name="sales_contact" required >
+    </div>
+
+    <div>
+        <label for="status">Status:</label>
+        <select id="active" name="active" required > 
+            <!-- DROP DOWN -->  
+        <option value="true">active</option>
+        </select>   
+    </div>
+    
+<button type="submit">Add</button>
+
+</form>
+
+
+<table>
+<tr>
+    <th>Manufacturer id</th>
+    <th>Manufacturer name</th>
+    <th>Sales contact</th>
+    <th>Status</th>
+</tr>
 
 {% for manufacturer in manufacturers %}
-
-<div>
-<h1>Manufacturer: {{ manufacturer.name}}</h1>
-<h2>Sales contact: {{ manufacturer.sales_contact }}</h2>
-<h3>Status: {{ manufacturer.get_status() }}</h3>
-</div>
-
+<tr>
+    <td>{{ manufacturer.id}}</td>
+    <td>{{ manufacturer.name}}</td>
+    <td>{{ manufacturer.sales_contact }}</td>
+    <td>{{ manufacturer.get_status() }}</td>
+    <td>
+        <form action="/manufacturers/{{ manufacturer.id }}/delete-manufacturer" method="POST">
+            <button>Delete</button>
+        </form>
+    </td>
+</tr>
 {% endfor %}
+</table>
 
 {% endblock %}

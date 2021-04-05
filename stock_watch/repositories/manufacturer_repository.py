@@ -7,7 +7,7 @@ import repositories.fabric_repository as fabric_repository
 
 
 def save(manufacturer):
-    sql = "INSERT INTO manufacturers (manufacturer_name, sales_contact, active) VALUES ( %s, %s, %s ) RETURNING id"
+    sql = "INSERT INTO manufacturers (manufacturer_name, sales_contact, active) VALUES ( %s, %s, %s) RETURNING id"
     values = [manufacturer.name, manufacturer.sales_contact, manufacturer.active]
     results = run_sql(sql, values)
     id = results [0] ['id']

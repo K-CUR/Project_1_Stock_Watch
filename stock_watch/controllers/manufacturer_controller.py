@@ -1,4 +1,4 @@
-from flask import Flask, render_template, url_for
+from flask import Flask, render_template, url_for, redirect, request
 from flask import Blueprint
 
 from models.fabric import Fabric
@@ -19,3 +19,23 @@ def manufacturers():
 def show_manufacturer(id):
     manufacturer = manufacturer_repository.select(id)
     return render_template("/manufacturers/show.html", manufacturer = manufacturer)
+
+
+@manufacturers_blueprint.route("/manufacturers", methods =['GET'])
+def new_manufacturer():
+    return render_template("/manufacturers/index.html")
+
+
+@manufacturers_blueprint.route("/manufacturers/new", methods=['POST'])
+def create_manufacturer():
+    name = request.form['name']
+    sales_contact = request.form['sales_contact']
+    active = request.form['active']
+    manufacturer = Manufacturer(name, sales_contact, active)
+    manufacturer_repository.save(manufacturer)
+    return redirect("/manufacturers")
+
+@manufacturers_blueprint.route("/manufacturers/<id>/delete-manufacturer", methods = ['POST'])
+def delete_manufacturer(id):
+    manufacturer_repository.delete(id)
+    return redirect("/manufacturers")

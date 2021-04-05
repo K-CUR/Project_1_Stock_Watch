@@ -19,11 +19,6 @@ class Fabric:
         return str(mark_up)+"%"
 
 
-    # def flag_low_stock(self, quantity):
-    #     low_stock_threshold = 30
-    #     if quantity < low_stock_threshold:
-            # return "Low stock!"
-
     def flag_low_or_out_of_stock(self, quantity):
         low_stock_threshold = 30
         if quantity == 0 :

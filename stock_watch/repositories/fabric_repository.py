@@ -58,7 +58,19 @@ def update(fabric):
     run_sql(sql, values)
 
 
-# def filter(fabric):
-#     sql = "SELECT * FROM fabrics WHERE manufacturer.name = %s"
-#     values = [manufacturer.name]
-#     run_sql(sql, values)
+def filter_fabric_by_manufacturer(id):
+    # have the id from the filter form
+    fabrics = []
+
+    sql = "SELECT * FROM fabrics WHERE manufacturer_id = %s"
+    values = [id]
+    results = run_sql(sql, values)
+
+    for row in results:
+        manufacturer = manufacturer_repository.select(id)
+        fabric = Fabric(manufacturer, row['design_ref'], row['main_colour'], row ['style'], row['stock_price'], row['sale_price'], row['quantity'], row['id'])
+        fabrics.append(fabric)
+    return fabrics
+
+
+    

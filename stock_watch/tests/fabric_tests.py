@@ -36,11 +36,11 @@ class TestFabric (unittest.TestCase):
 
     def test_fabric_flags_low_stock(self):
         actual = self.fabric.flag_low_or_out_of_stock(self.fabric.quantity)
-        self.assertEqual("Low stock!", actual)
+        self.assertEqual("Low stock", actual)
 
     def test_fabric_flags_out_of_stock(self):
         actual = self.fabric.flag_low_or_out_of_stock(self.fabric_2.quantity)
-        self.assertEqual("Out of stock!", actual)
+        self.assertEqual("Out of stock", actual)
 
     def test_fabric_flags_in_stock(self):
         actual = self.fabric.flag_low_or_out_of_stock(self.fabric_3.quantity)

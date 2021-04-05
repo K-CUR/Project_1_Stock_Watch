@@ -82,3 +82,15 @@ def fabrics(manufacturer):
 #         manufacturer = Manufacturer(row['manufacturer_name'], row['sales_contact'], row['active'], row['id'])
 
 #     return all_active_manufacturers
+
+def select_active():
+    manufacturers = []
+
+    sql = "SELECT * FROM manufacturers WHERE manufacturer.active = %s"
+    values = True
+    results = run_sql(sql)
+
+    for row in results:
+        manufacturer = Manufacturer(row['manufacturer_name'], row['sales_contact'], row['active'], row['id'])
+        manufacturers.append(manufacturer)
+    return manufacturers

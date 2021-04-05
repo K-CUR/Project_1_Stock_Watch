@@ -22,9 +22,9 @@ def fabrics():
 
 @fabrics_blueprint.route("/fabrics/new", methods =['GET'])
 def new_fabric():
-    manufacturers = manufacturer_repository.select_all()
-    colours = ["green", "blue", "pink", "red", "white", "yellow", "purple", "teal", "multi-coloured", "brown", "grey", "orange", "black"]
-    styles = ["plain", "stripe", "check", "polka dot", "chevron", "geometric", "floral", "illustration"]
+    manufacturers = manufacturer_repository.select_active()
+    colours = ["Green", "Blue", "Pink", "Red", "White", "Yellow", "Purple", "Teal", "Multi-coloured", "Brown", "Grey", "Orange", "Black"]
+    styles = ["Plain", "Stripe", "Check", "Polka dot", "Chevron", "Geometric", "Floral", "Illustration"]
     return render_template("/fabrics/new.html", all_fabrics = fabrics, all_manufacturers = manufacturers, all_colours = colours, all_styles = styles)
 
 
@@ -48,8 +48,8 @@ def create_fabric():
 def edit_fabric(id):
     fabric = fabric_repository.select(id)
     manufacturers = manufacturer_repository.select_all()
-    colours = ["green", "blue", "pink", "red", "white", "yellow", "purple", "teal", "multi-coloured", "brown", "grey", "orange", "black"]
-    styles = ["plain", "stripe", "check", "polka dot", "chevron", "geometric", "floral", "illustration"]
+    colours = ["Green", "Blue", "Pink", "Red", "White", "Yellow", "Purple", "Teal", "Multi-coloured", "Brown", "Grey", "Orange", "Black"]
+    styles = ["Plain", "Stripe", "Check", "Polka dot", "Chevron", "Geometric", "Floral", "Illustration"]
     return render_template('fabrics/edit.html', fabric = fabric, all_manufacturers = manufacturers, all_colours = colours, all_styles = styles)
 
 

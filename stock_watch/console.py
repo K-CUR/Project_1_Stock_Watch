@@ -21,25 +21,25 @@ manufacturer_3 = Manufacturer("Denholm & Sons", "Kelly Dunbar", False)
 manufacturer_repository.save(manufacturer_3)
 
 # FABRICS
-fabric_1 = Fabric(manufacturer_1, "Nena01", "Green", "Plain", 12.00, 18.00, 26)
+fabric_1 = Fabric(manufacturer_1, "Nena01", "green", "Plain", 12.00, 18.00, 26)
 fabric_repository.save(fabric_1)
 
-fabric_2 = Fabric(manufacturer_1, "Nena02", "Blue", "Plain", 12.00, 18.00, 32)
+fabric_2 = Fabric(manufacturer_1, "Nena02", "blue", "Plain", 12.00, 18.00, 32)
 fabric_repository.save(fabric_2)
 
-fabric_3 = Fabric(manufacturer_1, "Nena03", "Grey", "Plain", 12.00, 18.00, 40)
+fabric_3 = Fabric(manufacturer_1, "Nena03", "grey", "Plain", 12.00, 18.00, 40)
 fabric_repository.save(fabric_3)
 
-fabric_4 = Fabric(manufacturer_2, "Satori08", "White", "Stripe", 16.00, 20.00, 22)
+fabric_4 = Fabric(manufacturer_2, "Satori08", "white", "Stripe", 16.00, 20.00, 22)
 fabric_repository.save(fabric_4)
 
-fabric_5 = Fabric(manufacturer_2, "Satori21", "Red", "Stripe", 16.00, 20.00, 33)
+fabric_5 = Fabric(manufacturer_2, "Satori21", "red", "Stripe", 16.00, 20.00, 33)
 fabric_repository.save(fabric_5)
 
-fabric_6 = Fabric(manufacturer_2, "Bella25", "Pink", "Floral", 18.00, 27.00, 50)
+fabric_6 = Fabric(manufacturer_2, "Bella25", "pink", "Floral", 18.00, 27.00, 50)
 fabric_repository.save(fabric_6)
 
-fabric_7 = Fabric(manufacturer_3, "Easter Bunny", "White", "Illustration", 8.00, 13.00, 12)
+fabric_7 = Fabric(manufacturer_3, "Easter Bunny", "white", "Illustration", 8.00, 13.00, 12)
 fabric_repository.save(fabric_7)
 
 

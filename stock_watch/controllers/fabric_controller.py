@@ -45,7 +45,7 @@ def create_fabric():
 
 
 @fabrics_blueprint.route("/fabrics/<id>/edit", methods=['GET'])
-def edit_task(id):
+def edit_fabric(id):
     fabric = fabric_repository.select(id)
     manufacturers = manufacturer_repository.select_all()
     colours = ["green", "blue", "pink", "red", "white", "yellow", "purple", "teal", "multi-coloured", "brown", "grey", "orange", "black"]

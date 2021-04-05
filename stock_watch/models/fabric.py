@@ -15,11 +15,21 @@ class Fabric:
 
     def mark_up(self, stock_price, sale_price):
         mark_up = ((sale_price - stock_price)/stock_price)*100
+        mark_up = round(mark_up,1)
         return str(mark_up)+"%"
 
 
-    def flag_low_stock(self, quantity):
+    # def flag_low_stock(self, quantity):
+    #     low_stock_threshold = 30
+    #     if quantity < low_stock_threshold:
+            # return "Low stock!"
+
+    def flag_low_or_out_of_stock(self, quantity):
         low_stock_threshold = 30
-        if quantity < low_stock_threshold:
+        if quantity == 0 :
+            return "Out of stock!"
+        elif quantity < low_stock_threshold:
             return "Low stock!"
+        else:
+            return ""
 

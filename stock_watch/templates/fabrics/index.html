@@ -9,6 +9,7 @@
     <th>Main colour</th>
     <th>Style</th>
     <th>Stock price £/m</th>
+    <th>Sale price £/m</th>
     <th>Markup %</th>
     <th>Quantity m</th>
     <th>Low stock warning</th>
@@ -22,9 +23,11 @@
     <td> {{ fabric.main_colour }}</td>
     <td>{{ fabric.style }}</td>
     <td>{{ fabric.stock_price }}</td>
-    <td>markup</td>
+    <td>{{ fabric.sale_price }}</td>
+    <td>{{fabric.mark_up(fabric.stock_price, fabric.sale_price)}}</td>
     <td>{{ fabric.quantity }}</td>
-    <td>Low stock warning</td>
+    <!-- <td>Low stock warning</td> -->
+    <td>{{ fabric.flag_low_or_out_of_stock(fabric.quantity) }}</td>  
 
     <td> 
     

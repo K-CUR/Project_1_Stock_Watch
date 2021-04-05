@@ -32,6 +32,7 @@
     <th>Quantity m</th>
     <th>Stock warning</th>
     <th>Manufacturer (click to view)</th>
+    <th>Delete item</th>
 </tr>
 
 {% for fabric in fabrics %}
@@ -52,6 +53,11 @@
         <a href="/manufacturer/{{ fabric.manufacturer.id }}">{{ fabric.manufacturer.name }}</a>
         <!-- href determines url. Whatever is in double curlies is the name of the link on the web page -->
 
+    </td>
+    <td>
+    <form action="/fabrics/{{ fabric.id }}/delete-fabric" method="POST">
+        <button>Delete</button>
+    </form>
     </td>
 </tr>
 {% endfor %}

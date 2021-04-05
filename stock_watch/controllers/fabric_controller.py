@@ -82,5 +82,17 @@ def filter_by_manufacturer():
     manufacturers = manufacturer_repository.select_all()
     return render_template('/fabrics/index.html', fabrics = fabrics, all_manufacturers = manufacturers)
 
+@fabrics_blueprint.route("/fabrics/<id>/delete-fabric", methods = ['POST'])
+def delete_fabric(id):
+    fabric_repository.delete(id)
+    return redirect("/fabrics")
+
+
+#     @tasks_blueprint.route("/tasks/<id>/delete", methods=['POST'])
+# def delete_task(id):
+#     task_repository.delete(id)
+#     return redirect('/tasks')
+
+
 
 

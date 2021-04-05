@@ -17,7 +17,8 @@ manufacturers_blueprint = Blueprint("manufacturers", __name__)
 @fabrics_blueprint.route("/fabrics")
 def fabrics():
     fabrics = fabric_repository.select_all()
-    return render_template("/fabrics/index.html", fabrics = fabrics)
+    manufacturers = manufacturer_repository.select_all()
+    return render_template("/fabrics/index.html", fabrics = fabrics, all_manufacturers = manufacturers)
 
 
 @fabrics_blueprint.route("/fabrics/new", methods =['GET'])
@@ -63,6 +64,12 @@ def update_fabric(id):
     sale_price = request.form['sale_price']
     quantity = request.form['quantity']
     manufacturer = manufacturer_repository.select(manufacturer_id)
-    fabric = Fabric(manufacturer, design_ref, main_colour, style, stock_price, sale_price, quantity)
+    fabric = Fabric(manufacturer, design_ref, main_colour, style, stock_price, sale_price, quantity, id)
     fabric_repository.update(fabric)
     return redirect('/fabrics')
+
+# @fabrics_blueprint.route("/fabrics", methods=['PUT'])
+# def update_for_manufacturer_filter():
+#     fabric_repository.filter(fabric)
+#     return redirect("/fabrics")
+

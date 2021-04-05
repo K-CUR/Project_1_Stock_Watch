@@ -51,7 +51,7 @@ def delete(id):
     result = run_sql(sql, values)
 
 
-def update(fabric):
+def update(manufacturer):
     sql = "UPDATE manufacturers SET (manufacturer_name, sales_contact, active) = ( %s, %s, %s ) WHERE id = %s"
     values = [manufacturer.name, manufacturer.sales_contact, manufacturer.active]
     run_sql(sql, values)
@@ -70,25 +70,12 @@ def fabrics(manufacturer):
     return fabrics
 
 
-
-# def select(active):
-#     all_active_manufacturers = []
-
-#     sql = "SELECT * FROM manufacturers WHERE active = %s"
-#     values = [active]
-#     result = run_sql(sql, values)
-
-#     if result is not None:
-#         manufacturer = Manufacturer(row['manufacturer_name'], row['sales_contact'], row['active'], row['id'])
-
-#     return all_active_manufacturers
-
 def select_active():
     manufacturers = []
 
-    sql = "SELECT * FROM manufacturers WHERE manufacturer.active = %s"
-    values = True
-    results = run_sql(sql)
+    sql = "SELECT * FROM manufacturers WHERE active = %s"
+    values = [True]
+    results = run_sql(sql, values)
 
     for row in results:
         manufacturer = Manufacturer(row['manufacturer_name'], row['sales_contact'], row['active'], row['id'])

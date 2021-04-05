@@ -2,6 +2,24 @@
 
 {% block content %}
 
+<form action="/fabrics" method="post">
+
+<div>
+    <label for="manufacturer">Manufacturer</label>
+    <select id="manufacturer" name="manufacturer_id"> 
+        <!-- DROP DOWN -->   -->
+        <option value=""></option>
+            {% for manufacturer in all_manufacturers %}
+        <option value="{{ manufacturer.id }}">{{ manufacturer.name }}</option>
+            {% endfor %}
+    </select> 
+</div>
+
+   <button type="submit">Run filter</button>
+
+</form>
+
+
 <table>
 <tr>
     <th>Stock id (click to edit)</th>

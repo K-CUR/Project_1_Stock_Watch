@@ -54,5 +54,11 @@ def delete(id):
 
 def update(fabric):
     sql = "UPDATE fabrics SET (manufacturer_id, design_ref, main_colour, style, stock_price, sale_price, quantity) = ( %s, %s, %s, %s, %s, %s, %s ) WHERE id = %s"
-    values = [fabric.manufacturer.id, fabric.design_ref, fabric.main_colour, fabric.style, fabric.stock_price, fabric.sale_price, fabric.quantity]
+    values = [fabric.manufacturer.id, fabric.design_ref, fabric.main_colour, fabric.style, fabric.stock_price, fabric.sale_price, fabric.quantity, fabric.id]
     run_sql(sql, values)
+
+
+# def filter(fabric):
+#     sql = "SELECT * FROM fabrics WHERE manufacturer.name = %s"
+#     values = [manufacturer.name]
+#     run_sql(sql, values)

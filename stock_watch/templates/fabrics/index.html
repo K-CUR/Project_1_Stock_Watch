@@ -2,24 +2,59 @@
 
 {% block content %}
 
+
+<!-- # FILTER -->
+<!-- Filter by:
 <form action="/fabrics/by-manufacturer" method="post">
 
 <div>
     <label for="manufacturer">Manufacturer</label>
-    <select id="manufacturer" name="manufacturer_id"> 
-        <!-- DROP DOWN -->   -->
-        <option value=""></option>
+    <select id="manufacturer" name="manufacturer_id">  -->
+        <!-- drop down -->  
+        <!-- <option value=""></option>
             {% for manufacturer in all_manufacturers %}
         <option value="{{ manufacturer.id }}">{{ manufacturer.name }}</option>
             {% endfor %}
     </select> 
 </div>
 
-   <button type="submit">Run filter</button>
+    <button type="submit">Apply filter</button>
 
+</form> -->
+
+<form action="/fabrics/by-fields" method="post">
+   
+    <div>
+        <label for="main_colour">Main colour:</label>
+        <select id="main_colour" name="main_colour" required > 
+        <!-- drop down -->
+            
+        <option value=""></option>
+            {% for colour in all_colours %}
+        <option value="{{ colour }}">{{ colour }}</option>
+            {% endfor %}
+        </select> 
+    </div>
+
+
+    <div>
+        <label for="manufacturer">Manufacturer</label>
+        <select id="manufacturer" name="manufacturer_id"> 
+            <!-- drop down -->
+            <option value=""></option>
+                {% for manufacturer in all_manufacturers %}
+            <option value="{{ manufacturer.id }}">{{ manufacturer.name }}</option>
+                {% endfor %}
+        </select> 
+    </div>
+    
+    <button type="submit">Apply filter</button>
+    
 </form>
 
+    <a href="/fabrics">Remove filter</a>
 
+<!-- # TABLE OF FABRIC -->
 <table>
 <tr>
     <th>Stock id (click to edit)</th>
@@ -43,16 +78,13 @@
     <td>{{ fabric.style }}</td>
     <td>{{ fabric.stock_price }}</td>
     <td>{{ fabric.sale_price }}</td>
+    <!-- Mark up -->
     <td>{{fabric.mark_up(fabric.stock_price, fabric.sale_price)}}</td>
     <td>{{ fabric.quantity }}</td>
-    <!-- <td>Low stock warning</td> -->
+    <!-- Low stock warning -->
     <td>{{ fabric.flag_low_or_out_of_stock(fabric.quantity) }}</td>  
-
     <td> 
-    
         <a href="/manufacturer/{{ fabric.manufacturer.id }}">{{ fabric.manufacturer.name }}</a>
-        <!-- href determines url. Whatever is in double curlies is the name of the link on the web page -->
-
     </td>
     <td>
     <form action="/fabrics/{{ fabric.id }}/delete-fabric" method="POST">
@@ -69,7 +101,5 @@
     <a href="/fabrics/new">Add Fabric</a>
 </button>
 
-
-<!-- # EDIT FABRIC BUTTON -->
 
 {% endblock %}

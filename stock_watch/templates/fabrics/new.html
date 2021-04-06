@@ -7,7 +7,7 @@
     <div>
         <label for="manufacturer">Manufacturer:</label>
         <select id="manufacturer" name="manufacturer_id" required autofocus> 
-<!-- DROP DOWN -->  
+        <!-- drop down -->
         <option value=""></option>
         {% for manufacturer in all_manufacturers %}
         <option value="{{ manufacturer.id }}">{{ manufacturer.name }}</option>
@@ -21,7 +21,7 @@
     <div>
         <label for="main_colour">Main colour:</label>
         <select id="main_colour" name="main_colour" required > 
-<!-- DROP DOWN -->
+        <!-- drop down -->
             <option value= "" ></option>
             {% for colour in all_colours %}
             <option value="{{ colour }}">{{ colour }}</option>
@@ -31,7 +31,7 @@
     <div>
         <label for="style">Style:</label>
         <select id="style" name="style" required > 
-<!-- DROP DOWN -->
+        <!-- drop down -->
             <option value=""></option>
             {% for style in all_styles %}
             <option value="{{ style }}">{{ style }}</option>

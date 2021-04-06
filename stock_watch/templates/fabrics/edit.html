@@ -26,23 +26,23 @@
     <div>
         <label for="main_colour">Main colour:</label>
         <select id="main_colour" name="main_colour" required > 
-<!-- DROP DOWN -->
+        <!-- drop down -->
             
         <option value="{{ fabric.main_colour }}"> {{ fabric.main_colour }} </option>
-        {% for colour in all_colours %}
+            {% for colour in all_colours %}
         <option value="{{ colour }}">{{ colour }}</option>
-        {% endfor %}
+            {% endfor %}
         </select> 
     </div>
 
     <div>
         <label for="style">Style:</label>
         <select id="style" name="style" required > 
-<!-- DROP DOWN -->
+        <!-- drop down -->
             <option value="{{ fabric.style}}"> {{ fabric.style}} </option>
-            {% for style in all_styles %}
+                {% for style in all_styles %}
             <option value="{{ style }}">{{ style }}</option>
-            {% endfor %}
+                {% endfor %}
         </select> 
     </div>
 

@@ -18,7 +18,9 @@ manufacturers_blueprint = Blueprint("manufacturers", __name__)
 def fabrics():
     fabrics = fabric_repository.select_all()
     manufacturers = manufacturer_repository.select_all()
-    return render_template("/fabrics/index.html", fabrics = fabrics, all_manufacturers = manufacturers)
+    colours = ["Green", "Blue", "Pink", "Red", "White", "Yellow", "Purple", "Teal", "Multi-coloured", "Brown", "Grey", "Orange", "Black"]
+
+    return render_template("/fabrics/index.html", fabrics = fabrics, all_manufacturers = manufacturers, all_colours = colours)
     # gifting this html file this data
 
 
@@ -69,19 +71,35 @@ def update_fabric(id):
     return redirect('/fabrics')
 
 
-@fabrics_blueprint.route("/fabrics/by-manufacturer", methods=['POST'])
-def filter_by_manufacturer():
-    manufacturer_id = request.form['manufacturer_id']
-
-    fabrics = fabric_repository.filter_fabric_by_manufacturer(manufacturer_id)
-    manufacturers = manufacturer_repository.select_all()
-    return render_template('/fabrics/index.html', fabrics = fabrics, all_manufacturers = manufacturers)
-
-
 @fabrics_blueprint.route("/fabrics/<id>/delete-fabric", methods = ['POST'])
 def delete_fabric(id):
     fabric_repository.delete(id)
     return redirect("/fabrics")
+
+
+# @fabrics_blueprint.route("/fabrics/by-manufacturer", methods=['POST'])
+# def filter_by_manufacturer():
+#     manufacturer_id = request.form['manufacturer_id']
+
+#     fabrics = fabric_repository.filter_fabric_by_manufacturer(manufacturer_id)
+#     manufacturers = manufacturer_repository.select_all()
+#     return render_template('/fabrics/index.html', fabrics = fabrics, all_manufacturers = manufacturers)
+
+
+@fabrics_blueprint.route("/fabrics/by-fields", methods=['POST'])
+def filter_by_fields():
+    manufacturer_id = request.form['manufacturer_id']
+    colour = request.form['main_colour']
+    
+    fabrics = fabric_repository.filter_fabric_by_fields(manufacturer_id, colour)
+    
+    manufacturers = manufacturer_repository.select_all()
+    
+    
+    return render_template('/fabrics/index.html', fabrics = fabrics, all_manufacturers = manufacturers)
+
+
+
 
 
 

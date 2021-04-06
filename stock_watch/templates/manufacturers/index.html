@@ -30,14 +30,14 @@ Add Manufacturer
 <table>
 <tr>
     <th>Manufacturer id</th>
-    <th>Manufacturer name</th>
+    <th>Company name (click to edit)</th>
     <th>Sales contact</th>
     <th>Status</th>
 </tr>
 
 {% for manufacturer in manufacturers %}
 <tr>
-    <td>{{ manufacturer.id}}</td>
+    <td><a href="/manufacturers/{{ manufacturer.id}}/edit">{{ manufacturer.id}}</a></td>
     <td>{{ manufacturer.name}}</td>
     <td>{{ manufacturer.sales_contact }}</td>
     <td>{{ manufacturer.get_status() }}</td>

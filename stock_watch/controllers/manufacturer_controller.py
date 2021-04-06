@@ -39,3 +39,19 @@ def create_manufacturer():
 def delete_manufacturer(id):
     manufacturer_repository.delete(id)
     return redirect("/manufacturers")
+
+
+@manufacturers_blueprint.route("/manufacturers/<id>/edit", methods=['GET'])
+def edit_manufacturer(id):
+    manufacturer = manufacturer_repository.select(id)
+    return render_template('manufacturers/edit.html', manufacturer = manufacturer)
+
+
+@manufacturers_blueprint.route("/manufacturers/<id>", methods=['POST'])
+def update_manufacturer(id):
+    name = request.form['name']
+    sales_contact = request.form['sales_contact']
+    active = request.form['active']
+    manufacturer = Manufacturer(name, sales_contact, active, id)
+    manufacturer_repository.update(manufacturer)
+    return redirect('/manufacturers')

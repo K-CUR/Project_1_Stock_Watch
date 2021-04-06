@@ -1,9 +1,12 @@
 table{
-border-collapse: collapse;
+    border-style: double;
+    border-collapse: collapse;
+    table-layout: fixed;
+    width: 100%
 }
 
 td, th{
-    border: solid 2px black;
+    border: solid 1px black;
 }
 
 .center_field{
@@ -12,4 +15,9 @@ td, th{
 
 .warning_red{
     color: red;
+}
+
+.links_teal{
+    color: teal;
+
 }

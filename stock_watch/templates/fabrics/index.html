@@ -56,14 +56,10 @@ Filter by:
     <th>Delete item</th>
 </tr>
 
-
-
-
-
 {% for fabric in fabrics %}
 <tr >
 
-    <td class="center_field"><a href="/fabrics/{{ fabric.id }}/edit">{{ fabric.id }}</a></td>
+    <td class="center_field"><a href="/fabrics/{{ fabric.id }}/edit" class="links_teal">{{ fabric.id }}</a></td>
     <td>{{ fabric.design_ref }}</td>
     <td> {{ fabric.main_colour }}</td>
     <td>{{ fabric.style }}</td>
@@ -75,7 +71,7 @@ Filter by:
     <!-- Low stock warning -->
     <td class="warning_red">{{ fabric.flag_low_or_out_of_stock(fabric.quantity) }}</td>  
     <td> 
-        <a href="/manufacturer/{{ fabric.manufacturer.id }}">{{ fabric.manufacturer.name }}</a>
+        <a href="/manufacturer/{{ fabric.manufacturer.id }}" class="links_teal">{{ fabric.manufacturer.name }}</a>
     </td>
     <td class="center_field">
     <form action="/fabrics/{{ fabric.id }}/delete-fabric" method="POST">

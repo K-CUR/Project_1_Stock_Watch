@@ -40,7 +40,8 @@ Filter by:
     <a href="/fabrics">Remove filter</a>
 
 <!-- # TABLE OF FABRIC -->
-<table>
+
+<table class = "table">
 <tr>
     <th>Stock id (click to edit)</th>
     <th>Design ref</th>
@@ -60,23 +61,23 @@ Filter by:
 
 
 {% for fabric in fabrics %}
-<tr>
+<tr >
 
-    <td><a href="/fabrics/{{ fabric.id }}/edit">{{ fabric.id }}</a></td>
+    <td class="center_field"><a href="/fabrics/{{ fabric.id }}/edit">{{ fabric.id }}</a></td>
     <td>{{ fabric.design_ref }}</td>
     <td> {{ fabric.main_colour }}</td>
     <td>{{ fabric.style }}</td>
-    <td>{{ fabric.stock_price }}</td>
-    <td>{{ fabric.sale_price }}</td>
+    <td class="center_field">{{ fabric.stock_price }}</td>
+    <td class="center_field">{{ fabric.sale_price }}</td>
     <!-- Mark up -->
-    <td>{{fabric.mark_up(fabric.stock_price, fabric.sale_price)}}</td>
-    <td>{{ fabric.quantity }}</td>
+    <td class="center_field">{{fabric.mark_up(fabric.stock_price, fabric.sale_price)}}</td>
+    <td class="center_field">{{ fabric.quantity }}</td>
     <!-- Low stock warning -->
-    <td>{{ fabric.flag_low_or_out_of_stock(fabric.quantity) }}</td>  
+    <td class="warning_red">{{ fabric.flag_low_or_out_of_stock(fabric.quantity) }}</td>  
     <td> 
         <a href="/manufacturer/{{ fabric.manufacturer.id }}">{{ fabric.manufacturer.name }}</a>
     </td>
-    <td>
+    <td class="center_field">
     <form action="/fabrics/{{ fabric.id }}/delete-fabric" method="POST">
         <button>Delete</button>
     </form>

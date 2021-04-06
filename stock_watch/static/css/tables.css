@@ -1,0 +1,15 @@
+table{
+border-collapse: collapse;
+}
+
+td, th{
+    border: solid 2px black;
+}
+
+.center_field{
+    text-align: center;
+}
+
+.warning_red{
+    color: red;
+}

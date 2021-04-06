@@ -88,5 +88,4 @@ def filter_fabric_by_fields(manufacturer_id, colour):
 
     return fabrics
 
-
     

@@ -1,0 +1,38 @@
+body{
+    padding: 0px;
+    margin: 0px;
+    background-color: white;
+    font-family: Britannic;
+}
+
+.center_image{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.top_left_image{
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.image_large{
+    width: 40%;
+}
+
+.image_small{
+    width: 25%; 
+}
+
+nav > ul {
+    list-style: none;
+
+
+}
+
+nav > ul > li > a {
+    text-decoration: none;
+
+}

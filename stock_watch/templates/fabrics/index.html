@@ -3,24 +3,9 @@
 {% block content %}
 
 
+
 <!-- # FILTER -->
-<!-- Filter by:
-<form action="/fabrics/by-manufacturer" method="post">
-
-<div>
-    <label for="manufacturer">Manufacturer</label>
-    <select id="manufacturer" name="manufacturer_id">  -->
-        <!-- drop down -->  
-        <!-- <option value=""></option>
-            {% for manufacturer in all_manufacturers %}
-        <option value="{{ manufacturer.id }}">{{ manufacturer.name }}</option>
-            {% endfor %}
-    </select> 
-</div>
-
-    <button type="submit">Apply filter</button>
-
-</form> -->
+Filter by:
 
 <form action="/fabrics/by-fields" method="post">
    
@@ -70,8 +55,13 @@
     <th>Delete item</th>
 </tr>
 
+
+
+
+
 {% for fabric in fabrics %}
 <tr>
+
     <td><a href="/fabrics/{{ fabric.id }}/edit">{{ fabric.id }}</a></td>
     <td>{{ fabric.design_ref }}</td>
     <td> {{ fabric.main_colour }}</td>
@@ -91,10 +81,14 @@
         <button>Delete</button>
     </form>
     </td>
+
 </tr>
+
 {% endfor %}
 
 </table>
+
+{% if fabrics == None %} No results meet this criteria {% endif %}
 
 <!-- # ADD NEW FABRIC BUTTON -->
 <button>

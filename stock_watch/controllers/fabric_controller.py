@@ -7,9 +7,6 @@ from models.manufacturer import Manufacturer
 import repositories.fabric_repository as fabric_repository
 import repositories.manufacturer_repository as manufacturer_repository
 
-
-
-
 fabrics_blueprint = Blueprint("fabrics", __name__)
 manufacturers_blueprint = Blueprint("manufacturers", __name__)
 
@@ -77,15 +74,6 @@ def delete_fabric(id):
     return redirect("/fabrics")
 
 
-# @fabrics_blueprint.route("/fabrics/by-manufacturer", methods=['POST'])
-# def filter_by_manufacturer():
-#     manufacturer_id = request.form['manufacturer_id']
-
-#     fabrics = fabric_repository.filter_fabric_by_manufacturer(manufacturer_id)
-#     manufacturers = manufacturer_repository.select_all()
-#     return render_template('/fabrics/index.html', fabrics = fabrics, all_manufacturers = manufacturers)
-
-
 @fabrics_blueprint.route("/fabrics/by-fields", methods=['POST'])
 def filter_by_fields():
     manufacturer_id = request.form['manufacturer_id']
@@ -93,10 +81,7 @@ def filter_by_fields():
     
     fabrics = fabric_repository.filter_fabric_by_fields(manufacturer_id, colour)
     
-    manufacturers = manufacturer_repository.select_all()
-    
-    
-    return render_template('/fabrics/index.html', fabrics = fabrics, all_manufacturers = manufacturers)
+    return render_template('/fabrics/index.html', fabrics = fabrics)
 
 
 

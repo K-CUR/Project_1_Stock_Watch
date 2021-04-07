@@ -3,15 +3,14 @@
 {% block content %}
 
 
-
 <!-- # FILTER -->
-<strong> Filter by: </strong> 
+<h3> Filter by: </h3>
 
 <form action="/fabrics/by-fields" method="post" class="form_horizontal">
    
     <div class="form_field">
         <label for="main_colour"> Main colour: </label>
-        <select id="main_colour" name="main_colour" required > 
+        <select id="main_colour" name="main_colour" class="field_width" required > 
         <!-- drop down -->
             
         <option value=""></option>
@@ -23,7 +22,7 @@
 
     <div class="form_field">
         <label for="manufacturer"> Manufacturer </label>
-        <select id="manufacturer" name="manufacturer_id"> 
+        <select id="manufacturer" name="manufacturer_id" class="field_width" > 
             <!-- drop down -->
             <option value=""></option>
                 {% for manufacturer in all_manufacturers %}
@@ -43,37 +42,37 @@
 
 <!-- # TABLE OF FABRIC -->
 
-<table class = "table">
+<table class = "table_fabric">
 <tr>
-    <th>Stock id (click to edit)</th>
-    <th>Design ref</th>
-    <th>Main colour</th>
-    <th>Style</th>
-    <th>Stock price £/m</th>
-    <th>Sale price £/m</th>
-    <th>Markup %</th>
-    <th>Quantity m</th>
-    <th>Stock warning</th>
-    <th>Manufacturer (click to view)</th>
-    <th>Delete item</th>
+    <th class="column_silm">Stock id <p class="narrow_header">(click to edit)</p></th>
+    <th class="column_wide">Design ref</th>
+    <th class="column_mid">Main colour</th>
+    <th class="column_mid">Style</th>
+    <th class="column_silm">Stock price £/m</th>
+    <th class="column_silm">Sale price £/m</th>
+    <th class="column_silm">Markup %</th>
+    <th class="column_silm">Quantity m</th>
+    <th class="column_mid">Stock warning</th>
+    <th class="column_wide">Manufacturer <p class="narrow_header">(click to view)</p></th>
+    <th class="column_silm">Delete item</th>
 </tr>
 
 {% for fabric in fabrics %}
 <tr >
 
     <td class="center_field"><a href="/fabrics/{{ fabric.id }}/edit" class="links_teal">{{ fabric.id }}</a></td>
-    <td>{{ fabric.design_ref }}</td>
-    <td> {{ fabric.main_colour }}</td>
-    <td>{{ fabric.style }}</td>
+    <td class="step_field">{{ fabric.design_ref }}</td>
+    <td class="step_field"> {{ fabric.main_colour }}</td>
+    <td class="step_field">{{ fabric.style }}</td>
     <td class="center_field">{{ fabric.stock_price }}</td>
     <td class="center_field">{{ fabric.sale_price }}</td>
     <!-- Mark up -->
     <td class="center_field">{{fabric.mark_up(fabric.stock_price, fabric.sale_price)}}</td>
     <td class="center_field">{{ fabric.quantity }}</td>
     <!-- Low stock warning -->
-    <td class="warning_red">{{ fabric.flag_low_or_out_of_stock(fabric.quantity) }}</td>  
+    <td class="warning_red step_field">{{ fabric.flag_low_or_out_of_stock(fabric.quantity) }}</td>  
     <td> 
-        <a href="/manufacturer/{{ fabric.manufacturer.id }}" class="links_teal">{{ fabric.manufacturer.name }}</a>
+        <a href="/manufacturer/{{ fabric.manufacturer.id }}" class="links_teal step_field">{{ fabric.manufacturer.name }}</a>
     </td>
     <td class="center_field">
     <form action="/fabrics/{{ fabric.id }}/delete-fabric" method="POST">
@@ -90,7 +89,7 @@
 {% if fabrics == None %} No results meet this criteria {% endif %}
 
 <!-- # ADD NEW FABRIC BUTTON -->
-<button class="button_add"><a href="/fabrics/new" class="button_href"><strong>Add fabric</strong></a></button>
+<button class="button_add"><a href="/fabrics/new" class="button_href"><strong>Add new fabric</strong></a></button>
 
 
 {% endblock %}

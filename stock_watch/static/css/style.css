@@ -57,3 +57,19 @@ nav > ul > li > a {
     flex-flow: row wrap;
     display: block;    
   }
+
+  h1{
+    color: teal;
+  }
+
+  h2{
+    color:black;
+  }
+
+  h3{
+    color: teal;
+    margin-top: 60px;
+  }
+
+
+

@@ -2,13 +2,14 @@
 
 {% block content %}
 
+<h1> Edit Fabric Form</h1>
 
+<form action="/fabrics/{{ fabric.id }}" method="post" >
+<ul class="form_wrapper">
 
-<form action="/fabrics/{{ fabric.id }}" method="post">
-
-    <div>
+    <li class="form_field form_input">
         <label for="manufacturer">Manufacturer:</label>
-        <select id="manufacturer" name="manufacturer_id" required > 
+        <select id="manufacturer" name="manufacturer_id" class="field_width3" required > 
 
         {% for manufacturer in all_manufacturers %}
         <option value="{{ manufacturer.id }}"
@@ -16,18 +17,17 @@
         {{ manufacturer.name }}
         </option>
         {% endfor %}
-
         </select>   
-    </div>
+    </li>
 
-    <div>
+    <li class="form_field form_input">
         <label for="design_ref">Design ref:</label>
-        <input type="text" id="design_ref" name="design_ref" value="{{ fabric.design_ref }}" required>
-    </div>
+        <input type="text" id="design_ref" name="design_ref" value="{{ fabric.design_ref }}" class="field_width" required>
+    </li>
 
-    <div>
+    <li class="form_field form_input">
         <label for="main_colour">Main colour:</label>
-        <select id="main_colour" name="main_colour" required > 
+        <select id="main_colour" name="main_colour" class="field_width3" required > 
         <!-- drop down -->
             
         <option value="{{ fabric.main_colour }}"> {{ fabric.main_colour }} </option>
@@ -35,35 +35,37 @@
         <option value="{{ colour }}">{{ colour }}</option>
             {% endfor %}
         </select> 
-    </div>
+    </li>
 
-    <div>
+    <li class="form_field form_input">
         <label for="style">Style:</label>
-        <select id="style" name="style" required > 
+        <select id="style" name="style" class="field_width3" required > 
         <!-- drop down -->
             <option value="{{ fabric.style}}"> {{ fabric.style}} </option>
                 {% for style in all_styles %}
             <option value="{{ style }}">{{ style }}</option>
                 {% endfor %}
         </select> 
-    </div>
+    </li>
 
-    <div>
+    <li class="form_field form_input">
         <label for="stock_price">Stock price £:</label>
-        <input type="string" id="stock_price" name="stock_price" value = "{{ fabric.stock_price }}" required >
-    </div>
+        <input type="string" id="stock_price" name="stock_price" value = "{{ fabric.stock_price }}" class="field_width" required >
+    </li>
 
-    <div>
+    <li class="form_field form_input">
         <label for="sale_price">Sale price £:</label>
-        <input type="string" id="sale_price" name="sale_price" value = "{{ fabric.sale_price }}" required >
-    </div>
+        <input type="string" id="sale_price" name="sale_price" value = "{{ fabric.sale_price }}" class="field_width" required >
+    </li>
 
-    <div>
+    <li class="form_field form_input">
         <label for="quantity">Quantity m:</label>
-        <input type="number" id="quantity" name="quantity" value = "{{ fabric.quantity }}" required >        
-    </div>
+        <input type="number" id="quantity" name="quantity" value = "{{ fabric.quantity }}" class="field_width" required >        
+    </li>
 
-    <button type="submit">Update and return to stock</button>
+</ul>  
+
+    <button type="submit" class="button link">Update and return to stock</button>
 
 </form>
 

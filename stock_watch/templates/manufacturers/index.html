@@ -4,7 +4,7 @@
 
 
 
-Add Manufacturer
+<h3> Add Manufacturer </h3>
 <form action="/manufacturers/new" method='post'>
 
     <div>
@@ -30,21 +30,22 @@ Add Manufacturer
 </form>
 
 
-<table>
+<table class="table_manufacturers">
 <tr>
-    <th>Manufacturer id</th>
-    <th>Company name (click to edit)</th>
-    <th>Sales contact</th>
-    <th>Status</th>
+    <th class="column_slim">Manufacturer id</th>
+    <th class="column_wider">Company name (click to edit)</th>
+    <th class="column_wider">Sales contact</th>
+    <th class="column_wide">Status</th>
+    <th class="column_silm">Delete item</th>
 </tr>
 
 {% for manufacturer in manufacturers %}
 <tr>
-    <td><a href="/manufacturers/{{ manufacturer.id}}/edit">{{ manufacturer.id}}</a></td>
-    <td>{{ manufacturer.name}}</td>
-    <td>{{ manufacturer.sales_contact }}</td>
-    <td>{{ manufacturer.get_status() }}</td>
-    <td>
+    <td class="center_field"><a href="/manufacturers/{{ manufacturer.id}}/edit" class="links_teal">{{ manufacturer.id}}</a></td>
+    <td class="step_field">{{ manufacturer.name}}</td>
+    <td class="step_field">{{ manufacturer.sales_contact }}</td>
+    <td class="step_field">{{ manufacturer.get_status() }}</td>
+    <td class="center_field">
         <form action="/manufacturers/{{ manufacturer.id }}/delete-manufacturer" method="POST">
             <button>Delete</button>
         </form>

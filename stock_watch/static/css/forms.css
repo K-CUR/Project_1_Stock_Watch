@@ -1,9 +1,49 @@
-.form_horizontal {
+/* #FABRIC FILTER */
+.form_horizontal{
     display: flex;
-    /* flex-flow: row wrap; */
 }
 
 .form_field{
     margin: 10px;
-
 }
+
+.form_input{
+    width: 200px;
+}
+
+/* #NEW FABRIC */
+.field_width{
+    width: 210px;
+    height: 25px;
+}
+
+.field_width2{
+    width: 200px;
+    height: 19px;
+}
+
+.field_width3{
+    width: 219px;
+    height: 29px;
+}
+
+/* .form_wrapper{
+    border-radius: 3px;
+    background-color:rgb(240, 231, 231);
+    padding: 20px;
+    margin: 15px;
+    display: inline;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column; */
+    /* flex-wrap:wrap;
+    justify-content: space-evenly;
+} */
+
+.form_wrapper{
+    list-style-type: none;
+    display: block;
+    /* flex-wrap: wrap; */
+    margin: 0 auto;
+}
+

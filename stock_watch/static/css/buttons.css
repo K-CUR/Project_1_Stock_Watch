@@ -1,7 +1,7 @@
 .button {
     color: teal;
     background-color:rgb(236, 231, 231);
-    border: 3px solid orange;  
+    border: 3px solid teal;  
     padding: 5px 15px;
     border-radius: 6px;
     font-size: 14px;
@@ -12,7 +12,7 @@
 .button_add {
     color: teal;
     background-color:rgb(236, 231, 231);
-    border: 3px solid orange;  
+    border: 3px solid teal;  
     padding: 10px 20px;
     border-radius: 6px;
     font-size: 18px;
@@ -29,7 +29,7 @@ color: teal;
     text-decoration: none;
     background-color:rgb(236, 231, 231);
     color: teal;
-    border: 3px solid orange;  
+    border: 3px solid teal;  
     padding: 4px 15px;
     margin: 5px 12px 20px 12px;
     border-radius: 6px;

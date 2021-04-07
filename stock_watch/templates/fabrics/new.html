@@ -2,59 +2,65 @@
 
 {% block content %}
 
-
+<h1> New Fabric Form</h1>
 
 <form action="/fabrics" method="post">
+<ul class="form_wrapper">
 
-    <div>
+    <li class="form_field form_input">
         <label for="manufacturer">Manufacturer:</label>
-        <select id="manufacturer" name="manufacturer_id" required autofocus> 
+        <select id="manufacturer" name="manufacturer_id" class="field_width" required autofocus> 
         <!-- drop down -->
         <option value=""></option>
         {% for manufacturer in all_manufacturers %}
         <option value="{{ manufacturer.id }}">{{ manufacturer.name }}</option>
         {% endfor %}
         </select>   
-    </div>
-    <div>
+    </li>
+    
+    <li class="form_field form_input">
         <label for="design_ref">Design ref:</label>
-        <input type="text" id="design_ref" name="design_ref" required >
-    </div>
-    <div>
+        <input type="text" id="design_ref" name="design_ref" class="field_width2" required >
+    </li>
+    
+    <li class="form_field form_input">
         <label for="main_colour">Main colour:</label>
-        <select id="main_colour" name="main_colour" required > 
+        <select id="main_colour" name="main_colour" class="field_width" required > 
         <!-- drop down -->
             <option value= "" ></option>
             {% for colour in all_colours %}
             <option value="{{ colour }}">{{ colour }}</option>
             {% endfor %}
         </select> 
-    </div>
-    <div>
+    </li>
+    
+    <li class="form_field form_input">
         <label for="style">Style:</label>
-        <select id="style" name="style" required > 
+        <select id="style" name="style" class="field_width" required > 
         <!-- drop down -->
             <option value=""></option>
             {% for style in all_styles %}
             <option value="{{ style }}">{{ style }}</option>
             {% endfor %}
         </select> 
-    </div>
-    <div>
-        <label for="stock_price">Stock price £:</label>
-        <input type="string" id="stock_price" name="stock_price" required >
-    </div>
-    <div>
+    <li class="form_field  form_input">
+            <label for="stock_price">Stock price £:</label>
+            <input type="string" id="stock_price" name="stock_price" class="field_width2" required >
+    </li>
+    
+    <li class="form_field form_input">
         <label for="sale_price">Sale price £:</label>
-        <input type="string" id="sale_price" name="sale_price" required >
-    </div>
-    <div>
+        <input type="string" id="sale_price" name="sale_price" class="field_width2" required >
+    </li>
+    
+    <li class="form_field form_input">
         <label for="quantity">Quantity m:</label>
-        <input type="number" id="quantity" name="quantity" required >        
-    </div>
+        <input type="number" id="quantity" name="quantity" class="field_width2" required >        
+    </li>
 
-    <button type="submit">Add to stock</button>
+</ul>
 
+<button type="submit" class="button link">Add to stock</button>
 </form>
 
 

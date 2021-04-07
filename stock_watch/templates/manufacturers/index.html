@@ -5,35 +5,35 @@
 
 
 <h3> Add Manufacturer </h3>
-<form action="/manufacturers/new" method='post'>
+<form action="/manufacturers/new" method='post' class="form_horizontal">
 
-    <div>
+    <div class="form_field">
         <label for="name">Company name:</label>
-        <input type="text" id="name" name="name" required autofocus >
+        <input type="text" id="name" name="name" class="field_width" required autofocus >
     </div>
 
-    <div>
+    <div class="form_field">
         <label for="sales_contact">Sales contact:</label>
-        <input type="text" id="sales_contact" name="sales_contact" required >
+        <input type="text" id="sales_contact" name="sales_contact" class="field_width" required >
     </div>
 
-    <div>
+    <div class="form_field">
         <label for="status">Status:</label>
-        <select id="active" name="active" required > 
+        <select id="active" name="active" class="field_width4" required > 
             <!-- drop down -->  
         <option value="true">active</option>
         </select>   
     </div>
     
-<button type="submit" class="button">Add</button>
+<button type="submit" class="button_add2">Add</button>
 
 </form>
 
 
 <table class="table_manufacturers">
 <tr>
-    <th class="column_slim">Manufacturer id</th>
-    <th class="column_wider">Company name (click to edit)</th>
+    <th class="column_slim">Manufacturer id <p class="narrow_header">(click to edit</p></th>
+    <th class="column_wider">Company name <p class="narrow_header">(click to edit)</p></th>
     <th class="column_wider">Sales contact</th>
     <th class="column_wide">Status</th>
     <th class="column_silm">Delete item</th>

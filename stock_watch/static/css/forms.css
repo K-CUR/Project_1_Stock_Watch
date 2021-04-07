@@ -27,6 +27,11 @@
     height: 29px;
 }
 
+.field_width4{
+    width: 150px;
+    height: 32px;
+}
+
 /* .form_wrapper{
     border-radius: 3px;
     background-color:rgb(240, 231, 231);

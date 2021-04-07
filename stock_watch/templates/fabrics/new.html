@@ -2,13 +2,13 @@
 
 {% block content %}
 
-<h1> New Fabric Form</h1>
+<h1> New fabric form</h1>
 
 <form action="/fabrics" method="post">
 <ul class="form_wrapper">
 
     <li class="form_field form_input">
-        <label for="manufacturer">Manufacturer:</label>
+        <label for="manufacturer" class="mid_bold">Manufacturer:</label>
         <select id="manufacturer" name="manufacturer_id" class="field_width" required autofocus> 
         <!-- drop down -->
         <option value=""></option>
@@ -19,12 +19,12 @@
     </li>
     
     <li class="form_field form_input">
-        <label for="design_ref">Design ref:</label>
+        <label for="design_ref" class="mid_bold">Design ref:</label>
         <input type="text" id="design_ref" name="design_ref" class="field_width2" required >
     </li>
     
     <li class="form_field form_input">
-        <label for="main_colour">Main colour:</label>
+        <label for="main_colour" class="mid_bold">Main colour:</label>
         <select id="main_colour" name="main_colour" class="field_width" required > 
         <!-- drop down -->
             <option value= "" ></option>
@@ -35,7 +35,7 @@
     </li>
     
     <li class="form_field form_input">
-        <label for="style">Style:</label>
+        <label for="style" class="mid_bold">Style:</label>
         <select id="style" name="style" class="field_width" required > 
         <!-- drop down -->
             <option value=""></option>
@@ -44,23 +44,23 @@
             {% endfor %}
         </select> 
     <li class="form_field  form_input">
-            <label for="stock_price">Stock price £:</label>
+            <label for="stock_price" class="mid_bold">Stock price £:</label>
             <input type="string" id="stock_price" name="stock_price" class="field_width2" required >
     </li>
     
     <li class="form_field form_input">
-        <label for="sale_price">Sale price £:</label>
+        <label for="sale_price" class="mid_bold">Sale price £:</label>
         <input type="string" id="sale_price" name="sale_price" class="field_width2" required >
     </li>
     
     <li class="form_field form_input">
-        <label for="quantity">Quantity m:</label>
+        <label for="quantity" class="mid_bold">Quantity m:</label>
         <input type="number" id="quantity" name="quantity" class="field_width2" required >        
     </li>
 
 </ul>
 
-<button type="submit" class="button link">Add to stock</button>
+<button type="submit" class="button link2">Add to stock</button>
 </form>
 
 

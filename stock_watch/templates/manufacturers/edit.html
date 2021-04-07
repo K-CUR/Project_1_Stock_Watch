@@ -2,30 +2,32 @@
 
 {% block content %}
 
-<h1> Edit Manufacturer Form</h1>
+<h1> Edit manufacturer form</h1>
 
 <form action="/manufacturers/{{ manufacturer.id}}" method="post">
+<ul class="form_wrapper">
+    <li class="form_field form_input">
+        <label for="name" class="mid_bold">Company name:</label>
+        <input type="text" id="name" name="name" value = "{{ manufacturer.name }}" class="field_width" required autofocus > 
+    </li>
 
-    <div>
-        <label for="name">Company name:</label>
-        <input type="text" id="name" name="name" value = "{{ manufacturer.name }}"" required autofocus > 
-    </div>
-
-    <div>
-        <label for="sales-contact">Sales contact:</label>
-        <input type="text" id="sales_contact" name="sales_contact" value = "{{ manufacturer.sales_contact }}"" required > 
-    </div>
+    <li class="form_field form_input">
+        <label for="sales-contact" class="mid_bold">Sales contact:</label>
+        <input type="text" id="sales_contact" name="sales_contact" value = "{{ manufacturer.sales_contact }}" class="field_width" required > 
+    </li>
     
-    <div>
-        <label for="status">Status:</label>
-        <select id="active" name="active" required > 
+    <li class="form_field form_input">
+        <label for="status" class="mid_bold">Status:</label>
+        <select id="active" name="active" class="field_width3" required > 
         <!-- drop down -->
         <option value="true" {% if manufacturer.active == True %} selected = "selected" {% endif%} >active</option>
         <option value="false" {% if manufacturer.active == False %} selected = "selected" {% endif %}>deactivated</option>
         </select> 
-    </div>
+    </li>
 
-    <button type="submit">Update and return to manufacturers</button>
+</ul>
+
+    <button type="submit" class="button link2">Update and return to manufacturers</button>
 
 </form>
 

@@ -74,13 +74,28 @@ def delete_fabric(id):
     return redirect("/fabrics")
 
 
+# @fabrics_blueprint.route("/fabrics/by-fields", methods=['POST'])
+# def filter_by_fields():
+#     manufacturer_id = request.form['manufacturer_id']
+#     colour = request.form['main_colour']
+    
+#     fabrics = fabric_repository.filter_fabric_by_fields(manufacturer_id, colour)
+    
+#     return render_template('/fabrics/index.html', fabrics = fabrics)
+
+
 @fabrics_blueprint.route("/fabrics/by-fields", methods=['POST'])
 def filter_by_fields():
     manufacturer_id = request.form['manufacturer_id']
     colour = request.form['main_colour']
-    
-    fabrics = fabric_repository.filter_fabric_by_fields(manufacturer_id, colour)
-    
+
+    if manufacturer_id != "" and colour == "":
+        fabrics = fabric_repository.filter_fabric_by_manufacturer(manufacturer_id)
+    elif colour != "" and manufacturer_id == "":
+        fabrics = fabric_repository.filter_fabric_by_colour(colour)   
+    else:
+        fabrics = fabric_repository.filter_fabric_by_fields(manufacturer_id, colour)   
+
     return render_template('/fabrics/index.html', fabrics = fabrics)
 
 

@@ -41,7 +41,7 @@ def select(id):
 
     if result is not None:
         manufacturer = Manufacturer(result['manufacturer_name'], result['sales_contact'], result['active'], result['id'])
-        # had error 'row not defined' because I had row[] instead of result[]
+
     return manufacturer
 
 
@@ -58,17 +58,17 @@ def update(manufacturer):
     
     
 
-def fabrics(manufacturer):
-    fabrics = []
+# def fabrics(manufacturer):
+#     fabrics = []
 
-    sql = "SELECT * FROM fabrics WHERE manufacturer_id = %s"
-    values = [manufacturer.id]
-    results = run_sql(sql, values)
+#     sql = "SELECT * FROM fabrics WHERE manufacturer_id = %s"
+#     values = [manufacturer.id]
+#     results = run_sql(sql, values)
 
-    for row in results:
-        fabric = Fabric(manufacturer, row['design_ref'], row['main_colour'], row ['style'], row['stock_price'], row['sale_price'], row['quantity'], row['id'])
-        fabrics.append(fabric)
-    return fabrics
+#     for row in results:
+#         fabric = Fabric(manufacturer, row['design_ref'], row['main_colour'], row ['style'], row['stock_price'], row['sale_price'], row['quantity'], row['id'])
+#         fabrics.append(fabric)
+#     return fabrics
 
 
 def select_active():

@@ -5,12 +5,12 @@
 
 
 <!-- # FILTER -->
-Filter by:
+<strong> Filter by: </strong> 
 
-<form action="/fabrics/by-fields" method="post">
+<form action="/fabrics/by-fields" method="post" class="form_horizontal">
    
-    <div>
-        <label for="main_colour">Main colour:</label>
+    <div class="form_field">
+        <label for="main_colour"> Main colour: </label>
         <select id="main_colour" name="main_colour" required > 
         <!-- drop down -->
             
@@ -21,9 +21,8 @@ Filter by:
         </select> 
     </div>
 
-
-    <div>
-        <label for="manufacturer">Manufacturer</label>
+    <div class="form_field">
+        <label for="manufacturer"> Manufacturer </label>
         <select id="manufacturer" name="manufacturer_id"> 
             <!-- drop down -->
             <option value=""></option>
@@ -33,11 +32,14 @@ Filter by:
         </select> 
     </div>
     
-    <button type="submit">Apply filter</button>
+    <button type="submit" class="button"><strong>Apply filter</strong></button>
+    <a href="/fabrics" class="link"><strong>Remove filter</strong> </a>
     
 </form>
 
-    <a href="/fabrics">Remove filter</a>
+
+
+
 
 <!-- # TABLE OF FABRIC -->
 
@@ -88,9 +90,7 @@ Filter by:
 {% if fabrics == None %} No results meet this criteria {% endif %}
 
 <!-- # ADD NEW FABRIC BUTTON -->
-<button>
-    <a href="/fabrics/new">Add Fabric</a>
-</button>
+<button class="button_add"><a href="/fabrics/new" class="button_href"><strong>Add fabric</strong></a></button>
 
 
 {% endblock %}

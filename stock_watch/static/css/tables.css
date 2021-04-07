@@ -2,7 +2,8 @@ table{
     border-style: double;
     border-collapse: collapse;
     table-layout: fixed;
-    width: 100%
+    width: 100%;
+
 }
 
 td, th{
@@ -11,6 +12,10 @@ td, th{
 
 .center_field{
     text-align: center;
+}
+
+.step_field{
+    text-align:;
 }
 
 .warning_red{

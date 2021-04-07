@@ -1,0 +1,39 @@
+.button {
+    color: teal;
+    background-color:rgb(236, 231, 231);
+    border: 3px solid orange;  
+    padding: 5px 15px;
+    border-radius: 6px;
+    font-size: 14px;
+    margin: 5px 12px 20px 12px;
+    cursor: pointer;
+}
+
+.button_add {
+    color: teal;
+    background-color:rgb(236, 231, 231);
+    border: 3px solid orange;  
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-size: 18px;
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+.button_href {
+text-decoration: none;
+color: teal;
+}
+
+.link{
+    text-decoration: none;
+    background-color:rgb(236, 231, 231);
+    color: teal;
+    border: 3px solid orange;  
+    padding: 4px 15px;
+    margin: 5px 12px 20px 12px;
+    border-radius: 6px;
+    font-size: 15.5px;
+    font-weight:bolder;
+    cursor: pointer;
+}

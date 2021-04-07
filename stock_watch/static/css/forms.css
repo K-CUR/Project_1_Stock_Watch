@@ -1,0 +1,9 @@
+.form_horizontal {
+    display: flex;
+    /* flex-flow: row wrap; */
+}
+
+.form_field{
+    margin: 10px;
+
+}

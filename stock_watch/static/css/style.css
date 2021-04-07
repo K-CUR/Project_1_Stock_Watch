@@ -48,6 +48,7 @@ nav > ul > li > a {
     border-radius: 8px;
     font-size:larger;
     margin: 60px;
+    font-weight: bold;
 }
 
 #nav_style {

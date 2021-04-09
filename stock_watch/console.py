@@ -20,6 +20,9 @@ manufacturer_repository.save(manufacturer_2)
 manufacturer_3 = Manufacturer("Denholm & Sons", "Kelly Dunbar", False)
 manufacturer_repository.save(manufacturer_3)
 
+manufacturer_4 = Manufacturer("Designers Guild", "Claire Parry", True)
+manufacturer_repository.save(manufacturer_4)
+
 # FABRICS
 fabric_1 = Fabric(manufacturer_1, "Nena01", "Green", "Plain", 12.00, 16.00, 26)
 fabric_repository.save(fabric_1)

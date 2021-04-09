@@ -68,8 +68,11 @@ The app is structured as follows,
 **Closing down**
 
 Quit psql command:	\q
+
 Quit Flask command:	ctrl + C
+
 Quit console command:	q
+
 Close VS Code and Chrome
 
 END

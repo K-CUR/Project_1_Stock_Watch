@@ -39,6 +39,7 @@ Terminal 3:
 
     python3 console.py
     enter
+    (seeds database)
 
 4.	In Chrome, in the browser enter:
 

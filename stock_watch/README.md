@@ -24,7 +24,10 @@ Terminal 1:
     dropdb stock_watch
     enter
  
-    createdb
+    createdb stock_watch
+    enter
+    
+    psql -d stock_watch -f db/stock_watch.sql
     enter
 
 Terminal 2:
@@ -35,14 +38,6 @@ Terminal 2:
 Terminal 3:
 
     python3 console.py
-    enter
-
-Return to terminal 1:
-
-    psql -d stock_watch -f db/stock_watch.sql
-    enter
-
-    psql stock_watch
     enter
 
 4.	In Chrome, in the browser enter:
